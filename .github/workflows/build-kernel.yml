@@ -296,7 +296,7 @@ jobs:
     - name: release
       uses: softprops/action-gh-release@v1
       with:
-      tag_name: ${{env.UPLOADNAME }}
+      tag_name: boot${{ env.UPLOADNAME }}-${{ env.DEVICE }}-${{ env.BUILD_TIME }}
       body: |
 
         Kernel:
