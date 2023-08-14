@@ -2,7 +2,8 @@ name: Build Kernel
 on:
   watch:
     types: [started]
-workflow_dispatch:
+
+  workflow_dispatch:
 
 jobs:
   build:
@@ -290,9 +291,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: boot${{ env.UPLOADNAME }}-${{ env.DEVICE }}-${{ env.BUILD_TIME }}
-        path: kernel_workspace/boot.img     
-
-          files: |
-            out/arch/arm64/boot/Image
-            out/arch/arm64/boot/dtbo.img
-        
+        path: kernel_workspace/boot.img
