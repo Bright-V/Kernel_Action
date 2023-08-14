@@ -292,14 +292,6 @@ jobs:
       with:
         name: boot${{ env.UPLOADNAME }}-${{ env.DEVICE }}-${{ env.BUILD_TIME }}
         path: kernel_workspace/boot.img     
-        
-    - name: release
-      uses: softprops/action-gh-release@v1
-      with:
-      body: |
-
-        Kernel:
-        https://github.com/Bright-V/Kernel_Action
 
           files: |
             out/arch/arm64/boot/Image
