@@ -296,7 +296,6 @@ jobs:
     - name: release
       uses: softprops/action-gh-release@v1
       with:
-      tag_name: boot
       body: |
 
         Kernel:
