@@ -206,13 +206,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: ${{ env.KERNEL_IMAGE_NAME }}${{ env.UPLOADNAME }}-${{ env.DEVICE }}-${{ env.BUILD_TIME }}
-        path: kernel_workspace/android-kernel/gcc-arm.tar.gz
+        path: $GITHUB_WORKSPACE/kernel_workspace/gcc-arm.tar.gz
     - name: Upload gcc
       if: env.ENABLE_CCACHE == 'true'
       uses: actions/upload-artifact@v3
       with:
         name: ${{ env.KERNEL_IMAGE_NAME }}${{ env.UPLOADNAME }}-${{ env.DEVICE }}-${{ env.BUILD_TIME }}
-        path: kernel_workspace/android-kernel/gcc-aarch64.tar.gz
+        path: $GITHUB_WORKSPACE/kernel_workspace/gcc-aarch64.tar.gz
     - name: Build kernel
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
